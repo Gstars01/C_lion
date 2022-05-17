@@ -1,14 +1,26 @@
-#include <stdio.h>
+//
+// Created by khw49 on 2022-05-17.
+//
+#include<stdio.h>
+#include<malloc.h>
+#include<string.h>
 
-int main() {
-    int ar[]={11,12,13,14,15};
-    int *p1,*p2,*p3;
+int main()
+{
+    int len=10,num = 5,i;
+    char **name;
 
-    p1 = &ar[0];
-    p2 = &ar[4];
-    p3 = p1+(p2-p1)/2;
-
-    printf("중간의 요소 =%d",*p3);
-
+    name = (char **)malloc(num*sizeof(char *));
+    for(i=0;i<num;i++){
+        name[i] = (char*) malloc(len*sizeof(char));
+    }
+    for(i=0;i<num;i++){
+        sprintf(name[i],"string %d",i);
+        puts(name[i]);
+    }
+    for(i=0;i<num;i++){
+        free(name[i]);
+    }
+    free(name);
     return 0;
 }
