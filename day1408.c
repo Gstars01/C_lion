@@ -4,27 +4,29 @@
 #include<stdio.h>
 #include<malloc.h>
 int main(){
-    int ten=8,one=8;
-    int** height;
-    height = (int**) malloc(ten*sizeof(int*));
-    for(int i=0;i<ten;i++){
-        height[i] = (int*) malloc(one*sizeof(int*));
+    int eight = 8;
+    int **double_Arr;
+
+    double_Arr = (int**) malloc(eight * sizeof(int*));
+    for(int i=0;i<eight;i++){
+        double_Arr[i] = (int *) malloc(eight*sizeof(int ));
     }
-    for(int i=0;i<ten;i++){
-         for(int j=0;j<one;i++){
-             *(*(height+i)+j) = (i*10)+j;
-         }
-    }
-    for(int i=0;i<ten;i++){
-        for(int j=0;j<one;i++){
-            printf("%d",height[i][j]);
+    printf("processed");
+    for(int i=0;i<eight;i++){
+        for(int j=0;j<eight;j++){
+            double_Arr[i][j] = i*10+j;
         }
     }
-    for(int i=0;i<ten;i++){
-        for(int j=0;j<one;i++){
-            free(*(*(height+i)+j));
+    printf("processed");
+    for(int i=0;i<eight;i++) {
+        for(int j=0;j<eight;j++){
+            printf("%d %d : ",i,j);
+            printf("%d\n ",double_Arr[i][j]);
         }
     }
-    free(height);
+    for(int i=0;i<eight;i++){
+        free(double_Arr[i]);
+    }
+    free(double_Arr);
     return 0;
 }
