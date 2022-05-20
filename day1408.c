@@ -28,5 +28,6 @@ int main(){
         free(double_Arr[i]);
     }
     free(double_Arr);
+    printf("program end");
     return 0;
 }
