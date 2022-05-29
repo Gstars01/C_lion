@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //
 // Created by khw49 on 2022-05-17.
 //
@@ -22,5 +23,19 @@ int main()
         free(name[i]);
     }
     free(name);
+=======
+#include <stdio.h>
+
+
+int main() {
+    char str[] = "C Programming";
+    char *stp=str;
+
+    for(int i=0;i<sizeof(str);i++){
+        printf("%c = %d\n",*stp,i);
+        stp++;
+    }
+
+>>>>>>> c7f2142502e50a4e4be06272b93d78d1eb6b60de
     return 0;
 }
